@@ -27,11 +27,10 @@ int merge2fastasinto1 (int argc, char** argv)
     ifstream myfile;
     ifstream myfile2;
     string line;
-    myfile.open(argv[1]);
-    myfile2.open(argv[2]);
+    myfile.open(argv[2]);
+    myfile2.open(argv[3]);
     //myfile.open("/ufrc/boucher/aysegul.bumin/ReadCompare/BaitKmerBeefUMI_Partial1.fasta");
     //myfile2.open("/ufrc/boucher/aysegul.bumin/ReadCompare/NoBaitKmerBeefUMI_Partial1.fasta");
-
     //myfile.open("/home/aysegul/CLionProjects/some/BaitKmerBeefUMI.fasta");
     //myfile2.open("/home/aysegul/CLionProjects/some/NoBaitKmerBeefUMI.fasta");
     map <string, int > kmers;
@@ -60,7 +59,7 @@ int merge2fastasinto1 (int argc, char** argv)
     }
     ofstream b;
     //b.open("/ufrc/boucher/aysegul.bumin/ReadCompare/KmersBeefUMI_Partial1.fasta");
-    b.open(argv[3]);
+    b.open(argv[4]);
     //b.open("/home/aysegul/CLionProjects/some/BaitNoBaitKmersBeefUMI.txt");
     int c=0;
     for(auto elem:kmers)

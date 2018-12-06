@@ -1,7 +1,0 @@
-	,/home/aysegull/ClionProjects/SignificantBaitNoBait/Sorted1.txt,/home/aysegull/ClionProjects/SignificantBaitNoBait/Sorted2.txt,/home/aysegull/ClionProjects/SignificantBaitNoBait/Sorted3.txt,/home/aysegull/ClionProjects/SignificantBaitNoBait/Sorted4.txt
-AAAAA,1,0,0,0
-AAAAC,0,1,1,1
-AAAAG,2,1,1,1
-AAAGA,1,0,0,0
-AAATA,0,1,1,1
-ATAAA,0,1,1,1

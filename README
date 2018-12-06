@@ -13,6 +13,8 @@ There are 4 different things that can be done with this code.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 How to Run?
 
+//For test cases assume that the read files, namely NotContam5.fasta and NotContam8.fasta, and the k-mer(4-mer) counts Sorted5.txt and Sorted8.txt are given.
+ 
 1.Open terminal and go to the code's directory.
 
 2.Run >make
@@ -26,7 +28,7 @@ How to Run?
 	
 		Command Line : ./main 0 threshold# /path/to/output/file n# /path/to/input_1 /path/to/input_2 ... /path/to/input_n
 				
-				Test: ./main 0 1 TestAll.txt 2 Sorted1.txt Sorted2.txt
+				Test: ./main 0 1 TestAll.txt 2 Sorted5.txt Sorted8.txt
 
 				* The input files are assumed to be alphabetically sorted 
 				
@@ -52,7 +54,9 @@ How to Run?
 
 		Command Line:>./main 1 k bait_index1 bait_index2 ... bait_indexn nobait_index1 nobait_index2 ... nobait_indexn fold_value /path/to/input/file /path/to/Significant/BaitKmers /path/to/Significant/NoBaitKmers
 
-			Test:
+			Test:./main 1 2 1 2 1 TestAll.txt Bait.fasta NoBait.fasta
+
+			*I picked the fold value to be 1 to observe more significant k-mers.
 			
 			Details:
 	
@@ -77,7 +81,7 @@ How to Run?
 			
 		Command Line: >./main 2 /path/to/input/file1 /path/to/input/file2 /path/to/outputfile
 
-			Test:
+			Test: ./main 2 Bait.fasta NoBait.fasta Merged.fasta
 		
 			Details:
 
@@ -93,7 +97,8 @@ How to Run?
 
 		Command Line: >./main 3 /path/to/Read/file /path/to/Kmer/file /path/to/output/file
 			
-			Test:
+			Test:./main 3 NotContam5.fasta Merged.fasta BaitMatrix.txt
+			     ./main 3 NotContam8.fasta Merged.fasta NoBaitMatrix.txt
 		
 			Details:
 				

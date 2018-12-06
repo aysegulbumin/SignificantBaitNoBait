@@ -12,9 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa949f27-f348-4ba0-bb81-292f7c886507" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FoldChange.cpp" afterPath="$PROJECT_DIR$/FoldChange.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Merge.cpp" afterPath="$PROJECT_DIR$/Merge.cpp" />
     </list>
     <ignored path="SignificantBaitNoBait.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,21 +32,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+            <state relative-caret-position="450">
+              <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Merge.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Merge.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Merge.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            <state relative-caret-position="651">
+              <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
               <folding>
                 <element signature="e#41#59#0" expanded="true" />
               </folding>
@@ -109,7 +107,7 @@
       <file leaf-file-name="KmerMerge.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/KmerMerge.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4320">
+            <state relative-caret-position="3126">
               <caret line="288" column="41" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
               <folding />
             </state>
@@ -130,7 +128,6 @@
         <option value="$PROJECT_DIR$/Bait.fasta" />
         <option value="$PROJECT_DIR$/KmerTest.fasta" />
         <option value="$PROJECT_DIR$/InputTest.txt" />
-        <option value="$PROJECT_DIR$/Merge.cpp" />
         <option value="$PROJECT_DIR$/KmerMerge.cpp" />
         <option value="$PROJECT_DIR$/Merge.h" />
         <option value="$PROJECT_DIR$/Count.h" />
@@ -139,6 +136,7 @@
         <option value="$PROJECT_DIR$/Count.cpp" />
         <option value="$PROJECT_DIR$/FoldChange.cpp" />
         <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Merge.cpp" />
       </list>
     </option>
   </component>
@@ -395,12 +393,12 @@
       <updated>1543983682493</updated>
       <workItem from="1543983684383" duration="15455000" />
       <workItem from="1544053657771" duration="2310000" />
-      <workItem from="1544066147871" duration="1137000" />
+      <workItem from="1544066147871" duration="1522000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18902000" />
+    <option name="totallyTimeSpent" value="19287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -735,14 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/KmerMerge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4320">
-          <caret line="288" column="41" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Merge.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -789,16 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Merge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-          <folding>
-            <element signature="e#41#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/FoldChange.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="485">
@@ -809,9 +789,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="450">
+          <caret line="34" column="1" selection-start-line="34" selection-start-column="1" selection-end-line="34" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KmerMerge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3126">
+          <caret line="288" column="41" selection-start-line="288" selection-start-column="41" selection-end-line="288" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Merge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="61" column="17" selection-start-line="61" selection-start-column="17" selection-end-line="61" selection-end-column="17" />
+          <folding>
+            <element signature="e#41#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
