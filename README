@@ -1,0 +1,46 @@
+There are 4 different things that can be done with this code.
+
+0.Merging the Kmer Counts 
+
+This mode is used to merge different lists that contain k-mers and counts into one list that contains all the kmers and their counts.
+
+This mode takes at least 4 parameters.
+
+To run this mode follow these steps.
+
+	1. Open terminal and go to the code's directory.
+
+	2. >make
+
+	3. >./main 0 threshold /path/to/output/file n /path/to/input_1 /path/to/input_2 ... /path/to/input_n
+		
+		0 - denotes that the program is in Merging the Kmer Counts mode.
+
+		threshold- is an integer.
+			It denotes the minimum number of files that needs to have non zero value.
+			(i.e if it is 1 then the output will consist of the kmers and counts that occur in at least one of the files.)
+			If you do not want to restrict the output, write 1 instead of threshold.
+		
+		/path/to/output/file- is path to the output file.
+			
+		n -is an integer.
+			It denotes the number of input files that one wants to merge. The parameter "n" will be followed by n number of parameters that are paths to the n input files.
+
+		/path/to/input_x- is path to the input file.
+
+		
+	4. The results will be saved in the path provided as parameter. 
+		The results are in comma separated format.
+		Each column is a different input file, each row is a different kmer. Each entry in index (i,j) shows the number of occurrences of that particular kmer(i) in that particular file(j).
+
+
+1.Calculating the Log Fold Change
+
+We are using this code to find the k-mers that are significant for Bait or significant for No Bait.
+
+Some input files are known to be bait, some input files are known to be NoBait.
+
+Given the indices of the bait files and the no bait files in the input file. 
+	
+
+	

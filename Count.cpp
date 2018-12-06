@@ -52,12 +52,12 @@ int Count(int argc, char** argv)
 {
     high_resolution_clock::time_point t1 = high_resolution_clock::now();
     ifstream myfile2;
-    myfile2.open(argv[1]);
+    myfile2.open(argv[2]);
 
     string line2;
     string line;
     // int columns=stoi(argv[3]);
-    string a=argv[3];
+    string a=argv[4];
     ofstream output;
     output.open(a);
     if (myfile2.is_open()) {
@@ -73,7 +73,7 @@ int Count(int argc, char** argv)
             {
 
                 ifstream myfile;
-                myfile.open(argv[2]);
+                myfile.open(argv[3]);
                 int c=0;
                 if (myfile.is_open()) {
 
