@@ -11,15 +11,34 @@ There are 4 different things that can be done with this code.
 3.Count given K-mers in fasta file.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+How to Run Test Cases?
+
+For test cases assume that the read files are NotContam5.fasta and NotContam8.fasta, and the k-mer(4-mer) counts are Sorted5.txt and Sorted8.txt.
+
+
+	Given NotContam5.fasta,NotContam8.fasta and Sorted5.txt Sorted8.txt,
+		one can get the ultimate matrix needed to feed into the Machine Learning part by following these steps. 
+		./main 0 1 TestAll.txt 2 Sorted5.txt Sorted8.txt
+		./main 1 2 1 2 1 TestAll.txt Bait.fasta NoBait.fasta
+		./main 2 Bait.fasta NoBait.fasta Merged.fasta (One can use another method to combine two fasta files into Merged.fasta)
+		./main 3 NotContam5.fasta Merged.fasta BaitMatrix.txt
+		./main 3 NotContam8.fasta Merged.fasta NoBaitMatrix.txt
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 How to Run?
 
-//For test cases assume that the read files, namely NotContam5.fasta and NotContam8.fasta, and the k-mer(4-mer) counts Sorted5.txt and Sorted8.txt are given.
+
  
 1.Open terminal and go to the code's directory.
 
 2.Run >make
 
-3.
+3. 
+	Note that the first parameter after main denotes which mode to use. And the rest of the parameters change from mode to mode. 
+
+        (The parameter should be 0 for Merging the Kmer Counts , 1 for Calculating the Log Fold Change, 2 for Merging 2 fasta files into 1 fasta file, 3 for Count given K-mers in fasta file.)
+
 	Case1: Merging the Kmer Counts 
 		
 		Input: Threshold, N tab separated (or space separated) files.
@@ -27,12 +46,18 @@ How to Run?
 		Output: Comma separated matrix, rows are kmers and columns are the files. Each index denotes the number of occurence of that particular kmer in that particular file.
 	
 		Command Line : ./main 0 threshold# /path/to/output/file n# /path/to/input_1 /path/to/input_2 ... /path/to/input_n
+	
 				
 				Test: ./main 0 1 TestAll.txt 2 Sorted5.txt Sorted8.txt
 
 				* The input files are assumed to be alphabetically sorted 
 				
 				Details:
+					 1st parameter: 0
+        	    			 2nd parameter: (int) threshold - If there is no restriction threshold=1.
+                    			 3rd parameter: output file
+                    			 4th parameter: (int) n - Number of input files
+                    			 5th- nth parameter: input files.
 				
 					0 - denotes that the program is in Merging the Kmer Counts mode.
 
@@ -74,6 +99,8 @@ How to Run?
 
 
 	Case3: Merging 2 fasta files into 1 fasta file
+               
+		The user can use his/her own method to combine two fasta files.It is not a must to use this step.But I provide this option as well.
 		
 		Input : 2 fasta files
 		
