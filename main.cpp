@@ -16,8 +16,8 @@ int main(int argc, char** argv) {
             break;
         case 1:
             cout<<"Calculating the Log Fold Change."<<endl;
-            FoldChange (argc, argv); // 1 2 1 2 /home/aysegull/ClionProjects/SignificantBaitNoBait/AllTest.txt  /home/aysegull/ClionProjects/SignificantBaitNoBait/Bait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/NoBait.fasta
-            break; // 1 2 1 2 /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadAll.txt  /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadBait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadNoBait.fasta
+            FoldChange (argc, argv); // 1 2 1 2 3 /home/aysegull/ClionProjects/SignificantBaitNoBait/AllTest.txt  /home/aysegull/ClionProjects/SignificantBaitNoBait/Bait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/NoBait.fasta
+            break; // 1 2 1 2 3 /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadAll.txt  /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadBait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadNoBait.fasta
         case 2:
             cout<<"Merging 2 fasta files into 1 fasta file."<<endl;
             merge2fastasinto1(argc, argv); //2 /home/aysegull/ClionProjects/SignificantBaitNoBait/Merge1.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/Merge2.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta

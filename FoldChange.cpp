@@ -61,9 +61,10 @@ int FoldChange (int argc, char** argv)
         no_bait_indices.push_back(stoi(argv[2+(size/2)+i]));
     }
 
-    string input_file=argv[3+size];
-    string bait_output_file=argv[4+size];
-    string no_bait_output_file=argv[5+size];
+    int fold_value=stoi(argv[3+size]);
+    string input_file=argv[4+size];
+    string bait_output_file=argv[5+size];
+    string no_bait_output_file=argv[6+size];
     myfile.open(input_file);
 
     vector<float> log_folds;
@@ -141,14 +142,14 @@ int FoldChange (int argc, char** argv)
                 else
                 {
                     log_folds.push_back(log(total_bait/total_nobait));
-                    if(log(total_bait/total_nobait)>=1)
+                    if(log(total_bait/total_nobait)>=fold_value)
                     {
                         kmer_bait++;
                         output<<">"+to_string(kmer_bait)+"\n";
                         output<<myvec[0]<<"\n";
 
                     }
-                    else if(log(total_bait/total_nobait)<=-1)
+                    else if(log(total_bait/total_nobait)<=-fold_value)
                     {
                         kmer_nobait++;
                         output2<<">"+to_string(kmer_nobait)+"\n";
