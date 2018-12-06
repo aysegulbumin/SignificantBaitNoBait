@@ -1,3 +1,33 @@
+Preprocessing
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+This program assumes that the following pre-processing is done.
+ 
+1. Combine the forward and reverse read fastq files into a single fasta file.
+
+I used IDBA-UD for that.
+
+fq2fa --merge --filter 1f.fastq 1r.fastq  1.fasta
+
+
+2.Count the kmers in the fasta file.
+
+I used Jellyfish to do so.
+
+
+jellyfish count -m 31 -s 100M -t 10 -o mer_counts_1.jf 1.fasta
+
+jellyfish dump -c  mer_counts_1.jf > Jelly1.txt
+
+//The output of jellyfish is not sorted hence I used the following command line.
+
+sort -n -k1,1 Jelly1.txt >> SortedJelly1.txt
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 There are 4 different things that can be done with this code.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
