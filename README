@@ -124,8 +124,11 @@ How to Run?
 			significant for no-bait. This output file is in fasta format.
 
 
-		OUTPUT: Two fasta files. The first one contains the k-mers that are found to be significant for bait after log fold change calculation.
+		OUTPUT: This mode calculates the log fold change, outputs the histogram details of the log fold change to terminal.
+		And creates two output files in fasta format.The first one contains the k-mers that are found to be significant for bait after log fold change calculation.
 		The second one contains the k-mers that are found to be significant for no-bait after log fold change calculation.
+		
+			
 
 		Bait.fasta, NoBait.fasta
 
