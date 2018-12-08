@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
             break;
         case 3:
             //3 /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadNotContam5.fasta  /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadBait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/MatrixBait.txt
-            cout<<"Counting given Kmers in fasta file."<<endl;
+            cout<<"Counting given Kmers in fastq file. Creating a matrix."<<endl;
            // Count(argc, argv);// 3 /home/aysegull/ClionProjects/SignificantBaitNoBait/NotContamTest.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/KmerTest.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/InputTest.txt
            CountInFastq(argc,argv);//  3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R1.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R2.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt
             break;
