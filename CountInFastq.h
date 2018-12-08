@@ -1,0 +1,9 @@
+//
+// Created by aysegull on 12/8/18.
+//
+
+#ifndef SIGNIFICANTBAITNOBAIT_COUNTINFASTQ_H
+#define SIGNIFICANTBAITNOBAIT_COUNTINFASTQ_H
+
+int CountInFastq(int argc, char** argv);
+#endif //SIGNIFICANTBAITNOBAIT_COUNTINFASTQ_H

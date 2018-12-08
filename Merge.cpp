@@ -8,6 +8,7 @@
 #include <set>
 #include <functional>
 #include <cmath>
+#include <vector>
 #include <iostream>
 #include <fstream>
 #include "Merge.h"

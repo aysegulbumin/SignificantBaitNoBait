@@ -1,36 +1,19 @@
 Preprocessing
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------------------------------------------------
 This program assumes that the following pre-processing is done.
- 
-1. Combine the forward and reverse read fastq files into a single fasta file.
 
-I used IDBA-UD for that.
+1.Count the k-mers in the reads given in fastq format.
 
-fq2fa --merge --filter 1f.fastq 1r.fastq  1.fasta
+	We used KMC for counting k-mers.
+	
+        Batch file (kmc.sh) that we used is provided. 
 
-
-2.Count the kmers in the fasta file.
-
-I used Jellyfish to do so.
-
-
-jellyfish count -m 31 -s 100M -t 10 -o mer_counts_1.jf 1.fasta
-
-jellyfish dump -c  mer_counts_1.jf > Jelly1.txt
-
-//The output of jellyfish is not sorted hence I used the following command line.
-
-sort -n -k1,1 Jelly1.txt >> SortedJelly1.txt
-
-
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+--------------------------------------------------------------------------------------------------------------------------
 
 There are 4 different things that can be done with this code.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 
 0.Merging the Kmer Counts 
 
@@ -40,133 +23,209 @@ There are 4 different things that can be done with this code.
 
 3.Count given K-mers in fasta file.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------
 
 How to Run Test Cases?
 
-For test cases assume that the read files are NotContam5.fasta and NotContam8.fasta, and the k-mer(4-mer) counts are Sorted5.txt and Sorted8.txt.
+5f.fastq, 5r.fastq, 8f.fastq, 8r.fastq, Kmer5.txt, Kmer8.txt files are given.
+        
+You can change the parameters in test.sh file and try with different settings.
 
+ 
+1.Open terminal and go to the code's directory.
 
-	Given NotContam5.fasta,NotContam8.fasta and Sorted5.txt Sorted8.txt,
-		one can get the ultimate matrix needed to feed into the Machine Learning part by following these steps. 
-		./main 0 1 TestAll.txt 2 Sorted5.txt Sorted8.txt
-		./main 1 2 1 2 1 TestAll.txt Bait.fasta NoBait.fasta
-		./main 2 Bait.fasta NoBait.fasta Merged.fasta (One can use another method to combine two fasta files into Merged.fasta)
-		./main 3 NotContam5.fasta Merged.fasta BaitMatrix.txt
-		./main 3 NotContam8.fasta Merged.fasta NoBaitMatrix.txt
+2.Type > ./test.sh 
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+3.OUTPUT: 
+	
+	Bait_Matrix.txt and NoBait_Matrix.txt are the matrices to be fed into Machine Learning.
+
+--------------------------------------------------------------------------------------------------------------------------
 How to Run?
 
 
  
 1.Open terminal and go to the code's directory.
 
-2.Run >make
+2.Type >make
 
 3. 
-	Note that the first parameter after main denotes which mode to use. And the rest of the parameters change from mode to mode. 
-
-        (The parameter should be 0 for Merging the Kmer Counts , 1 for Calculating the Log Fold Change, 2 for Merging 2 fasta files into 1 fasta file, 3 for Count given K-mers in fasta file.)
-
-	Case1: Merging the Kmer Counts 
-		
-		Input: Threshold, N tab separated (or space separated) files.
-
-		Output: Comma separated matrix, rows are kmers and columns are the files. Each index denotes the number of occurence of that particular kmer in that particular file.
 	
-		Command Line : ./main 0 threshold# /path/to/output/file n# /path/to/input_1 /path/to/input_2 ... /path/to/input_n
+	The make file above creates an executable called "main". This
+	program runs in 4 modes for 4 different purposes (cases). The
+	first parameter after main denotes which mode to use. And the
+	rest of the parameters change from mode to mode. Below, we
+	explain what it does in each mode and how to run it in each mode.
+
+
+	Mode 0: Merging the Kmer Counts 
+		
+		This case takes 6 or more parameters.
+
+		Command Line : ./main 0 threshold outputfile numberOfInputFiles [List of input files]
+			We explain parameters below
+			- First parameter is 0
+			- Second parameter (threshold) is a positive
+			integer which denotes the minimum number of
+			input files which needs to contain given k-mer to consider that k-mer as abundant enough.
+			- Third parameter (outputFile) specifies the name of the file where result is written
+			- Fourth parameter (numberOfInputFiles) is an integer
+			with value at least the minimum of 2 and the
+			second parameter.
+			- Remaining parameters is a list of file names
+			indicating the input files containing k-Mers
+			and counts of k-Mers
+
+
+		OUTPUT: Comma separated matrix, rows are kmers and
+		columns are the files. Each index denotes the number
+		of occurence of that particular kmer in that
+		particular file.
+
+		SAMPLE OUTPUT file looks like below when two files are
+		       provided as input, for 5-grams and threshold = 1:
+----------------------------------
+		       ,inputfile1,inputfile2
+		       AAAAC,0,1
+		       AAACG,1,1
+		       AAAGA,2,0
+----------------------------------
+	
+
+		HOW TO RUN -- EXAMPLE:	./main 0 1 MergedKmers5_8.txt 2 Kmer5.txt Kmer8.txt 
+
 	
 				
-				Test: ./main 0 1 TestAll.txt 2 Sorted5.txt Sorted8.txt
-
-				* The input files are assumed to be alphabetically sorted 
-				
-				Details:
-					 1st parameter: 0
-        	    			 2nd parameter: (int) threshold - If there is no restriction threshold=1.
-                    			 3rd parameter: output file
-                    			 4th parameter: (int) n - Number of input files
-                    			 5th- nth parameter: input files.
-				
-					0 - denotes that the program is in Merging the Kmer Counts mode.
-
-					threshold#- is an integer.
-						It denotes the minimum number of files that needs to have non zero value.
-						(i.e if it is 1 then the output will consist of the kmers and counts that occur in at least one of the files.)
-						If you do not want to restrict the output, write 1 instead of threshold.
-					n# -is an integer.
-						It denotes the number of input files that one wants to merge. The parameter "n" will be followed by n number of parameters that are paths to the n input files.
 
 		
-	Case2: Calculating the Log Fold Change
+	Mode 1: Calculating the Log Fold Change
 		
-		Input: Comma separated matrix as an input-the same as the output of Case1, Fold value which will be used as threshold, number of bait files+ number of no-bait files.
+		This case takes 8 or more parameters.
+
+		Command Line : >./main 1 k [List of Bait indices] [List of NoBait indices] FoldValue inputFile outputFile1 outputFile2 
 			
-			* The number of bait files to consider is assumed to be equal to the number of no-bait files to consider. Hence the given number must be even.
+			We explain parameters below
+			- First parameter is 1
+			- Second parameter (k) is a positive even
+			integer which denotes the number of indices for bait files and no-bait files.
+			Its minimum value is 2.
+			- List of bait indices indicate indices of bait files in the input file -
+			Denotes whether it is 1st column or 2nd or 3rd etc. There must be k/2 such indices.
+			- List of no-bait indices indicate indices of no-bait files in the input file -
+			Denotes whether it is 1st column or 2nd or 3rd etc. There must be k/2 such indices.
+			- The next parameter (FoldValue) is an integer parameter, which denotes a threshold for log fold value
+			that consider k-mer to be significant.
+			In most of the cases it is set to either 2 or 3.
+			- The next parameter (inputFile) specifies the name of the file that contains comma separated matrix (output of Mode 0)
+			whose rows are kmers and columns are the files.
+			- The next parameter (outputFile1) specifies the name of the file that contains k-mers that are found to be
+			significant for bait. This output file is in fasta format.
+			- The next parameter (outputFile2) specifies the name of the file that contains k-mers that are found to be
+			significant for no-bait. This output file is in fasta format.
+
+
+		OUTPUT: Two fasta files. The first one contains the k-mers that are found to be significant for bait after log fold change calculation.
+		The second one contains the k-mers that are found to be significant for no-bait after log fold change calculation.
+
+		Bait.fasta, NoBait.fasta
+
+		SAMPLE OUTPUT file (NoBait.fasta) looks like below when the output of Mode 1 is given as input.
+----------------------------------
+		      	>1
+			ATGG
+			>2
+			CAAG
+			>3
+			CCAC
+			>4
+			CCGA
+			>5
+			TAAA
+----------------------------------
+	
+
+		HOW TO RUN -- EXAMPLE:	./main 1 2 1 2 1 MergedKmers5_8.txt Bait.fasta NoBait.fasta
+
+
+
+	Mode 2: Merging 2 fasta files into 1 fasta file
 		
-		Output: Significant Bait k-mers and No-Bait k-mers in fasta format.
-
-		Command Line:>./main 1 k bait_index1 bait_index2 ... bait_indexn nobait_index1 nobait_index2 ... nobait_indexn fold_value /path/to/input/file /path/to/Significant/BaitKmers /path/to/Significant/NoBaitKmers
-
-			Test:./main 1 2 1 2 1 TestAll.txt Bait.fasta NoBait.fasta
-
-			*I picked the fold value to be 1 to observe more significant k-mers.
 			
-			Details:
-	
-				1- Shows that the program is in calculating the log fold change mod
-				
-				k- is equal to 2n here.
-				
-				bait_index# - is an integer and denotes the indices of bait files in the input file -denotes whether it is 1st column or 2nd or 3rd etc. There must be k/2 such indices.
-
-				nobait_index# - is an integer and denotes the indices of no-bait files in the input file -denotes whether it is 1st column or 2nd or 3rd etc. There must be k/2 such indices.
+		(This mode is optional. Any other method to merge two fasta files can be used. )
 		
-				fold_value - is an integer parameter that shows which kmers to pick as significant, in most of the cases it is set to either 2 or 3. 
+		This case takes 4 parameters.
 
-				*Note that it is log fold change, not direct fold change-
-
-
-	Case3: Merging 2 fasta files into 1 fasta file
-               
-		The user can use his/her own method to combine two fasta files.It is not a must to use this step.But I provide this option as well.
-		
-		Input : 2 fasta files
-		
-		Output : 1 fasta file
+		Command Line : >./main 2 inputFile1 inputFile2 outputFile
 			
-		Command Line: >./main 2 /path/to/input/file1 /path/to/input/file2 /path/to/outputfile
-
-			Test: ./main 2 Bait.fasta NoBait.fasta Merged.fasta
-		
-			Details:
-
-				2 - shows that the program is in merging 2 fasta files mode.
-
-				The other parameters are self explanatory.			
-
-	Case4: Count given K-mers in fasta file
+			We explain parameters below
+			- First parameter is 2
+			- Second parameter (inputFile1) specifies the name of the file that is subject to be merged.
+			It is in fasta format.
+			- Third parameter (inputFile2) specifies the name of the second file that is subject to be merged.
+			It is in fasta format.
+			- Fourth parameter (outputFile) specifies the name of the file that is the merged fasta file.
 	
-		Input : 1 Reads file in fasta format , 1 k-mers file in fasta format
+		OUTPUT: One fasta file which is the merged version of two input files.
+	 
+		Merged.fasta
 
-		Output : A space separated matrix consisting of integers only. The rows are the Reads and the columns are the kmers, every index represents the count of that particular kmer in that particular read.
+		SAMPLE OUTPUT file  looks like below when the two fasta files (output of Mode 2) are given as input.
+----------------------------------
+		      	>1
+			ATGG
+			>2
+			CAAG
+			>3
+			CCAC
+			>4
+			CCGA
+			>5
+			TAAA
+----------------------------------
 
-		Command Line: >./main 3 /path/to/Read/file /path/to/Kmer/file /path/to/output/file
+
+		HOW TO RUN -- EXAMPLE:	./main 2 Bait.fasta NoBait.fasta SignificantKmers.fasta
+
+
+	Mode 3:  Count given K-mers in given fastq files and Create Matrix
+		
+		This case takes 5 parameters.
+
+		Command Line : >./main 3 forwardReadFile reverseReadFile kmersFile outputFile
+		
+		
+			We explain parameters below
+			- First parameter is 3
+			- Second parameter (forwardReadFile) specifies the name of the file that contains forward reads.
+			It is in fastq format.
+			- Third parameter (reverseReadFile) specifies the name of the file that contains reverse reads.
+			It is in fastq format.
+			- Fourth parameter (kmersFile) specifies the name of the file that contains kmers to be counted.
+			It is in fasta format.
+			- Fifth parameter (outputFile) specifies the name of the file that contains the resultant matrix.
+			The matrix contains the counts of the given k-mers in given reads. Rows represents the k-mers
+			and columns represent the reads.
+		
+		OUTPUT: A file that contains the counts of the given k-mers in given reads, in tab separated format.
+		
+		Bait_Matrix.txt
+
+		SAMPLE OUTPUT file  looks like below when fastq files contain 10 reads in total, and number of significant k-mers are 5.
+----------------------------------
+		1 0 1 0 4 
+		1 0 0 0 2 
+		0 0 0 0 1 
+		0 1 0 0 1 
+		0 0 1 2 0 
+		1 0 0 1 2 
+		0 0 0 0 0 
+		0 1 0 0 3 
+		0 1 0 0 2 
+		0 0 0 0 1 		     
+----------------------------------
 			
-			Test:./main 3 NotContam5.fasta Merged.fasta BaitMatrix.txt
-			     ./main 3 NotContam8.fasta Merged.fasta NoBaitMatrix.txt
-		
-			Details:
-				
-				3 - shows that the program is in Count given K-mers in fasta file mode.
-
-				The other parameters are self explanatory.
-	
-				Both input files are expected in fasta format.
-
-	
-				
-
+		HOW TO RUN -- EXAMPLE:	./main 3 5f.fastq 5r.fastq SignificantKmers.fasta Bait_Matrix.txt
+					or
+					./main 3 8f.fastq 8r.fastq SignificantKmers.fasta NoBait_Matrix.txt	
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
