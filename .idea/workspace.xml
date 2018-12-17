@@ -12,29 +12,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa949f27-f348-4ba0-bb81-292f7c886507" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CountInFastq.cpp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/BaitMatrix.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Merged.fasta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NoBaitMatrix.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotContam5.fasta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/NotContam8.fasta" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Sorted5.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Sorted8.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TestAll.txt" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main" afterPath="$PROJECT_DIR$/main" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/SignificantBaitNoBait.iml" afterPath="$PROJECT_DIR$/.idea/SignificantBaitNoBait.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Bait.fasta" afterPath="$PROJECT_DIR$/Bait.fasta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Count.cpp" afterPath="$PROJECT_DIR$/Count.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Count.h" afterPath="$PROJECT_DIR$/Count.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/FoldChange.cpp" afterPath="$PROJECT_DIR$/FoldChange.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KmerMerge.cpp" afterPath="$PROJECT_DIR$/KmerMerge.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Makefile" afterPath="$PROJECT_DIR$/Makefile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Merge.cpp" afterPath="$PROJECT_DIR$/Merge.cpp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NoBait.fasta" afterPath="$PROJECT_DIR$/NoBait.fasta" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CountInFastq.cpp" afterPath="$PROJECT_DIR$/CountInFastq.cpp" />
     </list>
     <ignored path="SignificantBaitNoBait.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,10 +33,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
+            <state relative-caret-position="405">
               <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -66,11 +45,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountInFastq.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="OutputMatrix5.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OutputMatrix5.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CountInFastq.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CountInFastq.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1877">
-              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+            <state relative-caret-position="-1667">
+              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
               <folding>
                 <element signature="e#86#104#0" expanded="true" />
               </folding>
@@ -101,8 +90,8 @@
       <file leaf-file-name="Count.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Count.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="115" column="13" selection-start-line="52" selection-start-column="1" selection-end-line="115" selection-end-column="13" />
+            <state relative-caret-position="1320">
+              <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
               <folding>
                 <element signature="e#44#62#0" expanded="true" />
               </folding>
@@ -163,9 +152,9 @@
         <option value="$PROJECT_DIR$/FoldChange.cpp" />
         <option value="$PROJECT_DIR$/KmerMerge.cpp" />
         <option value="$PROJECT_DIR$/CountInFastq.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/OutputMatrix5.txt" />
         <option value="$PROJECT_DIR$/CountInFastq.cpp" />
-        <option value="$PROJECT_DIR$/main.cpp" />
       </list>
     </option>
   </component>
@@ -397,7 +386,7 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R1.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R2.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt " WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SignificantBaitNoBait" TARGET_NAME="SignificantBaitNoBait" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SignificantBaitNoBait" RUN_TARGET_NAME="SignificantBaitNoBait">
+    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5f.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5r.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt " WORKING_DIR="" PASS_PARENT_ENVS_2="true" PROJECT_NAME="SignificantBaitNoBait" TARGET_NAME="SignificantBaitNoBait" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="SignificantBaitNoBait" RUN_TARGET_NAME="SignificantBaitNoBait">
       <envs />
       <method />
     </configuration>
@@ -423,12 +412,14 @@
       <workItem from="1543983684383" duration="15455000" />
       <workItem from="1544053657771" duration="2310000" />
       <workItem from="1544066147871" duration="1893000" />
-      <workItem from="1544287484183" duration="3385000" />
+      <workItem from="1544287484183" duration="4118000" />
+      <workItem from="1544423130468" duration="1244000" />
+      <workItem from="1545085770813" duration="1177000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23043000" />
+    <option name="totallyTimeSpent" value="26197000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
@@ -539,22 +530,82 @@
           <line>61</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/CountInFastq.cpp</url>
-          <line>100</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/CountInFastq.cpp</url>
-          <line>72</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="29" />
+      <option name="time" value="32" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CountInFastq.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding>
+            <element signature="e#86#104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CountInFastq.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Merge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Count.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#44#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Count.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FoldChange.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/KmerMerge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -588,7 +639,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -615,7 +665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -649,7 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -682,7 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -698,7 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +782,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -744,7 +789,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,14 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Merge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Count.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -780,6 +816,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Merged.fasta" />
     <entry file="file://$PROJECT_DIR$/CountInFastq.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -788,48 +825,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Merge.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Count.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
-          <caret line="115" column="13" selection-start-line="52" selection-start-column="1" selection-end-line="115" selection-end-column="13" />
+        <state relative-caret-position="1320">
+          <caret line="88" column="32" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
           <folding>
             <element signature="e#44#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Merged.fasta">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
-          <folding />
+        <state relative-caret-position="405">
+          <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OutputMatrix5.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CountInFastq.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1877">
-          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+        <state relative-caret-position="-1667">
+          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
           <folding>
             <element signature="e#86#104#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

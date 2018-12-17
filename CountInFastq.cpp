@@ -65,6 +65,8 @@ int CountInFastq(int argc, char** argv)
     // int columns=stoi(argv[3]);
     string a=argv[5];
     ofstream output;
+    string to_be_dumped="";
+    int count_end_of_line=0;
     output.open(a);
     int count=0;
     if (myfile2.is_open()) {
@@ -98,7 +100,8 @@ int CountInFastq(int argc, char** argv)
                             // {
                             string txt = line2;
                             string pat = line;
-                            output << countFreq2(pat, txt)<<" ";
+                            to_be_dumped=to_be_dumped+to_string(countFreq2(pat, txt))+" ";
+                            //output << countFreq2(pat, txt)<<" ";
                             // }
                             // else
                             // {
@@ -108,10 +111,21 @@ int CountInFastq(int argc, char** argv)
                         }
 
                     }
-                    output<<"\n";
+                    to_be_dumped=to_be_dumped+"\n";
+                    //output<<"\n";
+                    count_end_of_line++;
+                    if(count_end_of_line>=10000)
+                    {
+                        output<<to_be_dumped;
+                        to_be_dumped="";
+                        count_end_of_line=0;
+                    }
+
                     myfile.close();
                 }
-
+                output<<to_be_dumped;
+                to_be_dumped="";
+                count_end_of_line=0;
             }
         }
 
@@ -153,7 +167,8 @@ int CountInFastq(int argc, char** argv)
                             // {
                             string txt = line2;
                             string pat = line;
-                            output << countFreq2(pat, txt)<<" ";
+                            to_be_dumped=to_be_dumped+to_string(countFreq2(pat, txt))+" ";
+                            //output << countFreq2(pat, txt)<<" ";
                             // }
                             // else
                             // {
@@ -163,10 +178,21 @@ int CountInFastq(int argc, char** argv)
                         }
 
                     }
-                    output<<"\n";
+                    to_be_dumped=to_be_dumped+"\n";
+                    count_end_of_line++;
+                    if(count_end_of_line==10000)
+                    {
+                        output<<to_be_dumped;
+                        to_be_dumped="";
+                        count_end_of_line=0;
+                    }
+
+                    //output<<"\n";
                     myfile.close();
                 }
-
+                output<<to_be_dumped;
+                to_be_dumped="";
+                count_end_of_line=0;
             }
         }
 
