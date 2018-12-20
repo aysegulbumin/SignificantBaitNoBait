@@ -4,6 +4,7 @@
 #include "Count.h"
 #include "CountInFastq.h"
 #include "Merge.h"
+#include "CreateMatrix.h"
 
 using namespace std;
 
@@ -27,7 +28,9 @@ int main(int argc, char** argv) {
             //3 /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadNotContam5.fasta  /home/aysegull/ClionProjects/SignificantBaitNoBait/HeadBait.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/MatrixBait.txt
             cout<<"Counting given Kmers in fastq file. Creating a matrix."<<endl;
            // Count(argc, argv);// 3 /home/aysegull/ClionProjects/SignificantBaitNoBait/NotContamTest.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/KmerTest.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/InputTest.txt
-           CountInFastq(argc,argv);//  3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R1.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R2.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt
+          // CountInFastq(argc,argv);//  3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R1.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5.R2.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt
+           CreateMatrix(argc,argv); //3 /home/aysegull/ClionProjects/SignificantBaitNoBait/5f.fastq /home/aysegull/ClionProjects/SignificantBaitNoBait/5r.fastq  /home/aysegull/ClionProjects/SignificantBaitNoBait/Merged.fasta /home/aysegull/ClionProjects/SignificantBaitNoBait/OutputMatrix5.txt
+
             break;
         default:
             cout<<"Please select a relevant mode."<<endl;

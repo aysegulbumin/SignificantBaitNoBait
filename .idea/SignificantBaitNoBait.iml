@@ -3,17 +3,19 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/FoldChange.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/CountInFastq.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Count.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Count.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/Merge.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Merge.h" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/FoldChange.cpp" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/KmerMerge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Count.cpp" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/KmerMerge.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CountInFastq.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/FoldChange.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CreateMatrix.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Merge.h" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/CountInFastq.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CMakeLists.txt" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/main.cpp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/KmerMerge.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Count.h" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/CreateMatrix.cpp" isTestSource="false" />
     </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module-library">
