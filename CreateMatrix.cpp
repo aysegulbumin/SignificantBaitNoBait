@@ -67,9 +67,9 @@ void PrintMap(string output)
 
 void FillMap(string sequence)
 {
-    for(int i=0;i<sequence.size()-4;i++)
+    for(int i=0;i<sequence.size()-31;i++)
     {
-        string r = sequence.substr(i, 4);
+        string r = sequence.substr(i, 31);
         if (significant_kmers.find(r) != significant_kmers.end())
         {
             //found
